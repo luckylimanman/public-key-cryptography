@@ -5,8 +5,8 @@ import cryptography
 parser = argparse.ArgumentParser()
 parser.description = 'public-key cryptography'
 parser.add_argument("-k")
-parser.add_argument("-en", type=int)
-parser.add_argument("-de", type=int)
+parser.add_argument("-en")
+parser.add_argument("-de")
 parser.add_argument("-pu")
 parser.add_argument("-pr")
 args = parser.parse_args()

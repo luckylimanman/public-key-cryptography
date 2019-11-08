@@ -1,16 +1,16 @@
 # public-key-cryptography
-
+**任意字符可以被加密解密**
 **cli.py is the main file**
 
 ## How to generate keys:
 ```
 python3 cli.py -k <key name>
 ```
-## How to encrypt a plaintext(only int)：
+## How to encrypt a plaintext：
 ```
 python3 cli.py -en <plaintext> -pu <public key>
 ```
-## How to decrypt a ciphertext(only int):
+## How to decrypt a ciphertext:
 ```
 python3 cli.py -en <ciphertext> -pr <private key>
 ```
@@ -29,18 +29,18 @@ python3 cli.py -en <ciphertext> -pr <private key>
 
 > **Encrypt a number：**
 >```
->python3 cli.py -en 666 -pu '40093&390787'
+>python3 cli.py -en 肖战可爱 -pu '40093&390787'
 >```
 > **results:**
 >```
->ciphertext is 79273
+>ciphertext is 226721026509029344138819
 >```
 
 > **Decrypt a number:**
 >```
->python3 cli.py -en 79237 -pr '161093&390787'
+>python3 cli.py -de 226721026509029344138819 -pr '161093&390787'
 >```
 > **results:**
 >```
->plaintext is 666
+>plaintext is 肖战可爱
 >```
