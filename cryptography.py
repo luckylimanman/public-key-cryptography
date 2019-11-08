@@ -24,12 +24,17 @@ def pro(key):
     for D in a:
         if (E * D) % L == 1:
             break
-    print("Public key", key, ":", "\'" + str(E) + "&" + str(N) + "\'")
-    print("Private key", key, ":", "\'" + str(D) + "&" + str(N) + "\'")
-    print("The maximum number that can be encrypted is", N - 1, "!!!")
+    with open('/Users/limanman/Git/github/luckylimanman/public-key-cryptography/pu.txt', 'w') as f:
+        f.write(str(E) + "&" + str(N))
+    with open('/Users/limanman/Git/github/luckylimanman/public-key-cryptography/pr.txt', 'w') as f:
+        f.write(str(D) + "&" + str(N))
 
 
-def encryption(pla, pu):
+def encryption(pla):
+    with open('/Users/limanman/Git/github/luckylimanman/public-key-cryptography/pu.txt', 'r') as f:
+        pu = f.read()
+        print(pu)
+        print(type(pu))
     for i in range(len(pu)):
         if pu[i] == "&":
             N = int(pu[i + 1:])
@@ -43,7 +48,9 @@ def encryption(pla, pu):
     print("ciphertext is", cip)
 
 
-def decryption(cip, pr):
+def decryption(cip):
+    with open('/Users/limanman/Git/github/luckylimanman/public-key-cryptography/pr.txt', 'r') as f:
+        pr = f.read()
     for i in range(len(pr)):
         if pr[i] == "&":
             N = int(pr[i + 1:])
