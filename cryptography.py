@@ -24,17 +24,15 @@ def pro(key):
     for D in a:
         if (E * D) % L == 1:
             break
-    with open('/Users/limanman/Git/github/luckylimanman/public-key-cryptography/pu.txt', 'w') as f:
+    with open('pu.txt', 'w') as f:
         f.write(str(E) + "&" + str(N))
-    with open('/Users/limanman/Git/github/luckylimanman/public-key-cryptography/pr.txt', 'w') as f:
+    with open('pr.txt', 'w') as f:
         f.write(str(D) + "&" + str(N))
 
 
 def encryption(pla):
-    with open('/Users/limanman/Git/github/luckylimanman/public-key-cryptography/pu.txt', 'r') as f:
+    with open('pu.txt', 'r') as f:
         pu = f.read()
-        print(pu)
-        print(type(pu))
     for i in range(len(pu)):
         if pu[i] == "&":
             N = int(pu[i + 1:])
@@ -49,7 +47,7 @@ def encryption(pla):
 
 
 def decryption(cip):
-    with open('/Users/limanman/Git/github/luckylimanman/public-key-cryptography/pr.txt', 'r') as f:
+    with open('pr.txt', 'r') as f:
         pr = f.read()
     for i in range(len(pr)):
         if pr[i] == "&":
