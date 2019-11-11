@@ -4,45 +4,44 @@
 
 **cli.py is the main file**
 
-## How to generate keys:
+## 如何产生密钥:
 ```
 python3 cli.py -k <key name>
 ```
-## How to encrypt a plaintext：
+## 如何加密明文：
 ```
-python3 cli.py -en <plaintext> -pu <public key>
+python3 cli.py -en <plaintext>
 ```
-## How to decrypt a ciphertext:
+## 如何解密密文:
 ```
-python3 cli.py -en <ciphertext> -pr <private key>
+python3 cli.py -en <ciphertext>
 ```
 ## Examples:
-**Now we encrypt a number 666 and decrypt it !**
-> **generate keys:**
+**现在加密明文 “肖战可爱” 并且解密它 !**
+> **产生密钥:**
 >```
 >python3 cli.py -k no.1
 >```
-> **results:**
+> **运行结果:**
 >```
 >Public key no.1 : '40093&390787'
 >Private key no.1 : '161093&390787'
->The maximum number that can be encrypted is 390786 !!!
 >```
 
-> **Encrypt a number：**
+> **加密明文：**
 >```
->python3 cli.py -en 肖战可爱 -pu '40093&390787'
+>python3 cli.py -en 肖战可爱
 >```
-> **results:**
+> **运行结果:**
 >```
 >ciphertext is 226721026509029344138819
 >```
 
-> **Decrypt a number:**
+> **解密密文:**
 >```
->python3 cli.py -de 226721026509029344138819 -pr '161093&390787'
+>python3 cli.py -de 226721026509029344138819
 >```
-> **results:**
+> **运行结果:**
 >```
 >plaintext is 肖战可爱
 >```
