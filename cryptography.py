@@ -22,17 +22,18 @@ def generate_key(key):
         if (E * D) % L == 1:
             break
     with open('public_key.txt', 'w') as f:
-        f.write(str(E) + "&" + str(N))
+        f.write(str(E) + "O" + str(N))
     with open('private_key.txt', 'w') as f:
-        f.write(str(D) + "&" + str(N))
-    return (str(E) + "&" + str(N)), (str(D) + "&" + str(N))
+        f.write(str(D) + "O" + str(N))
+    return (str(E) + "O" + str(N)), (str(D) + "O" + str(N))
 
 
-def encryption(plaintext):
-    with open('public_key.txt', 'r') as f:
-        public_key = f.read()
+def encryption(plaintext, public_key=None):
+    if public_key is None:
+        with open('public_key.txt', 'r') as f:
+            public_key = f.read()
     for i in range(len(public_key)):
-        if public_key[i] == "&":
+        if public_key[i] == "O":
             N = int(public_key[i + 1:])
             E = int(public_key[:i])
     ciphertext = ''
@@ -49,7 +50,7 @@ def decryption(ciphertext):
     with open('private_key.txt', 'r') as f:
         private_key = f.read()
     for i in range(len(private_key)):
-        if private_key[i] == "&":
+        if private_key[i] == "O":
             N = int(private_key[i + 1:])
             D = int(private_key[:i])
     plaintext = ''
