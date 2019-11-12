@@ -11,6 +11,8 @@ python3 cli.py -k <key name>
 ## 如何加密明文：
 ```
 python3 cli.py -en <plaintext>
+or
+python3 cli.py -en <plaintext> -pu <public key>  
 ```
 ## 如何解密密文:
 ```
