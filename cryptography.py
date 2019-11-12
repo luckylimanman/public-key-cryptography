@@ -25,6 +25,7 @@ def generate_key(key):
         f.write(str(E) + "&" + str(N))
     with open('private_key.txt', 'w') as f:
         f.write(str(D) + "&" + str(N))
+    return (str(E) + "&" + str(N)), (str(D) + "&" + str(N))
 
 
 def encryption(plaintext):
@@ -41,6 +42,7 @@ def encryption(plaintext):
         ciphertext = ciphertext + str((int(encode_plaintext[j:j+5]) ** E) % N).zfill(len(str(N)))  # noqa
         j = j + 5
     print("ciphertext is", ciphertext)
+    return ciphertext
 
 
 def decryption(ciphertext):
@@ -56,6 +58,7 @@ def decryption(ciphertext):
         plaintext = plaintext + str((int(ciphertext[j:j+len(str(N))]) ** D) % N).zfill(5)  # noqa
         j = j + len(str(N))
     print("plaintext is", decoding(plaintext))
+    return decoding(plaintext)
 
 
 def lowest_common_multiple(x, y):
