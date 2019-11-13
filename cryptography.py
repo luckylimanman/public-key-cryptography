@@ -28,9 +28,10 @@ def generate_key(key):
     return (str(E) + "&" + str(N)), (str(D) + "&" + str(N))
 
 
-def encryption(plaintext):
-    with open('public_key.txt', 'r') as f:
-        public_key = f.read()
+def encryption(plaintext, public_key=None):
+    if public_key is None:
+        with open('public_key.txt', 'r') as f:
+            public_key = f.read()
     for i in range(len(public_key)):
         if public_key[i] == "&":
             N = int(public_key[i + 1:])
